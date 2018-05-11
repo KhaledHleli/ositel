@@ -1,6 +1,8 @@
 package org.ositel.technical_test.domain;
 
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -20,6 +22,7 @@ public class XlsxFile implements Serializable {
     private Long id;
 
     @NotNull
+    @Length(max = 255)
     @Column(name = "file_name", nullable = false)
     private String fileName;
 
